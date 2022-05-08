@@ -6,11 +6,12 @@ const saltRounds  = 10
 
 module.exports = {
   register : (req,res) => {
-    let {email,password} = req.body
+    let {email,password, name} = req.body
     bcyrpt.genSalt(saltRounds, function(err, salt) {
       bcyrpt.hash(password, salt, function(err, hash) {
         User.create({
           email,
+          name,
           password: hash
         }).then(user => {
            const token = jwt.sign({ user_id : user.id }, 'my-secret-key')
@@ -41,7 +42,7 @@ module.exports = {
             res
              .status(200)
              .send({
-              username : user.name,
+              "name" : user.name,
               "access_token" : token
             })
           }else{
