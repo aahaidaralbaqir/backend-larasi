@@ -11,8 +11,8 @@ module.exports = {
       title: {
         type: Sequelize.STRING
       },
-      genre_id: {
-        type: Sequelize.INTEGER
+      genre: {
+        type: Sequelize.STRING
       },
       image: {
         type: Sequelize.STRING
