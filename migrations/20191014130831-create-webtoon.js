@@ -20,6 +20,9 @@ module.exports = {
       isFavorite: {
         type: Sequelize.BOOLEAN
       },
+      created_by: {
+        type: Sequelize.INTEGER
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
