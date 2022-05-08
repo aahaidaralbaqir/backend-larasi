@@ -48,7 +48,7 @@ module.exports = {
             res
              .status(400)
              .send({
-               message : 'Wrong password and'
+               message : 'Wrong password'
              })
           }
         })
