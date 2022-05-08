@@ -120,7 +120,7 @@ module.exports = {
        message:'success',
        data: webtoons
      })
-   )
+   ).catch(error => console.log("Error -> ", error))
  },
  createWebtoon : (req,res) => {
    Webtoon.create({
